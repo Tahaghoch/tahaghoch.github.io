@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapPDFImg – تحويل PDF إلى صور والعكس</title>
+
+<!-- كود Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHVSDLP6MX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-LHVSDLP6MX');
+  </script>
+
+    <!-- consol search -->
+  <meta name="google-site-verification" content="gL7FHc-INI5U3FnaKvvDk_j31yBFHT42Ygw7wnATX5E" />
+  
+  <!-- Google Adsense -->
+   <meta name="google-adsense-account" content="ca-pub-7999209256244874">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7999209256244874"
+     crossorigin="anonymous"></script>
+
+   <!-- SEO -->
+  <meta name="description" content="أداة سريعة وآمنة لتحويل PDF إلى صور والعكس (صور إلى PDF) بدقة عالية مباشرة من المتصفح.">
+  <meta name="keywords" content="تحويل PDF إلى صور, تحويل صور إلى PDF, PDF to PNG, PDF to JPG, PNG to PDF, JPG to PDF, SnapPDFImg">
+  <meta name="author" content="TMGWEB">
+ 
+  <!-- Open Graph -->
+  <meta property="og:title" content="SnapPDFImg – أسهل طريقة للتحويل بين PDF والصور">
+  <meta property="og:description" content="حوّل صفحات PDF إلى صور أو العكس بخطوة واحدة وبدون رفع ملفاتك إلى خوادم خارجية.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tahaghoch.github.io/SnapPDFImg/">
+  <meta property="og:image" content="https://tahaghoch.github.io/SnapPDFImg/icon-512.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
+
+  <!-- Styles -->
+  <style>
+    :root 
+    { --primary:#2563eb; 
+    --bg:#f8fafc; 
+    --text:#1f2937; 
+    }
+    *
+    {
+      box-sizing:border-box
+    }
+    body
+    {
+      margin:0;
+      font-family:'Cairo',sans-serif;
+      background:var(--bg);
+      color:var(--text)
+    }
+    header
+    {
+      background:var(--primary);
+      color:#fff;
+      padding:2rem 1rem;
+      text-align:center
+    }
+    main
+    {
+      max-width:900px;
+      margin:auto;
+      padding:2rem 1rem
+    }
+    .uploader
+    {
+      border:2px dashed var(--primary);
+      padding:2rem;
+      text-align:center;
+      cursor:pointer;
+      background:#fff
+    }
+    .uploader:hover
+    {
+      background:#eef2ff
+    }
+    .hidden
+    {
+      display:none
+    }
+    #images,#pdfresult
+    {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+      gap:1rem;
+      margin-top:2rem
+    }
+    .card
+    {
+      background:#fff;
+      padding:1rem;
+      border-radius:8px;
+      box-shadow:0 2px 6px rgba(0,0,0,.1);
+      text-align:center
+    }
+    footer
+    {
+      text-align:center;
+      font-size:14px;
+      padding:1rem;
+      color:#64748b
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover
+    {
+      opacity:.9
+      }
+    nav
+    {
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin:1rem 0;
+      flex-wrap:wrap
+    }
+    .install-btns
+    {
+      text-align:center;
+      margin:2rem 0
+    }
+    #loader
+    {
+      text-align:center;
+      color:var(--primary);
+      font-weight:bold;
+    }
+  </style>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+  <h1>📄 SnapPDFImg</h1>
+  <p>حوّل PDF ⇆ صور بسهولة وأمان بالكامل أونلاين</p>
+</header>
+
+
+  <main>
+
+ <h2>مميزات الأداة</h2>
+  <ul>
+    <li>تحويل بي دي أف إلى صور JPG أو PNG بجودة عالية.</li>
+    <li>دمج عدة صور في ملف بي دي أف واحد بثوانٍ.</li>
+    <li>يدعم السحب والإفلات – لا حاجة للتسجيل.</li>
+    <li>يتم حذف الملفات تلقائيًا خلال 60 دقيقة.</li>
+  </ul>
+
+  <h2>طريقة الاستخدام</h2>
+  <ol>
+    <li>اضغط على منطقة التحميل الملونة بالأزرق أو اسحب ملفك إليها.</li>
+    <li>اختر «من بي دي أف إلى صور» أو «من صور إلى بي دي أف» حسب رغبتك.</li>
+    <li>اضغط «تحميل» لتنزيل النتيجة فورًا.</li>
+  </ol>
+
+    <div class="install-btns">
+      <button onclick="promptInstall()">تنزيل التطبيق</button>
+      <p>أو من إعدادات المتصفح اختر "إضافة إلى الشاشة الرئيسية"</p>
+    </div>
+
+    <nav>
+      <button onclick="switchMode('pdf2img')">PDF<br>إلى صور</button>
+      <button onclick="switchMode('img2pdf')">صور إلى<br>PDF</button>
+    </nav>
+
+    <!-- PDF إلى صور -->
+    <section id="pdf2imgSection">
+      <label class="uploader" id="pdfUploader">
+        <input type="file" id="pdfFile" accept="application/pdf" class="hidden">
+        <strong>اسحب ملف بي دي أف هنا أو اضغط لاختياره</strong>
+      </label>
+      <div id="images"></div>
+    </section>
+
+    <!-- صور إلى PDF -->
+    <section id="img2pdfSection" class="hidden">
+      <label class="uploader" id="imgUploader">
+        <input type="file" id="imgFiles" accept="image/*" multiple class="hidden">
+        <strong>اختر صور لإنشاء بي دي أف</strong>
+      </label>
+      <div id="pdfresult"></div>
+    </section>
+  </main>
+
+
+  <div>
+<button onclick="copySiteLink()" style="background:#6b7280;color:#fff;margin:5px">📋 نسخ رابط الموقع</button>
+</div>
+
+
+  <!-- Banner Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7999209256244874"
+       data-ad-slot="9117689493"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+
+  <footer>&copy; 2025 SnapPDFImg – جميع الحقوق محفوظة | TMGWEB</footer>
+
+ 
+  <script>
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    function promptInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.finally(() => deferredPrompt = null);
+      } else {
+        alert("من إعدادات المتصفح يمكنك إضافة التطبيق");
+      }
+    }
+
+    function switchMode(mode) {
+      document.getElementById("pdf2imgSection").classList.toggle("hidden", mode !== "pdf2img");
+      document.getElementById("img2pdfSection").classList.toggle("hidden", mode !== "img2pdf");
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    const pdfInput = document.getElementById("pdfFile");
+    const imagesDiv = document.getElementById("images");
+    pdfInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      imagesDiv.innerHTML = "";
+
+      const spinner = document.createElement("p");
+      spinner.id = "loader";
+      spinner.textContent = "جارٍ التحويل…";
+      imagesDiv.appendChild(spinner);
+
+      const buffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(buffer) }).promise;
+      imagesDiv.removeChild(spinner);
+
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 3 });
+
+        const canvas = document.createElement("canvas");
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+
+        const imgURL = canvas.toDataURL("image/png");
+
+        const imgElement = document.createElement("img");
+        imgElement.src = imgURL;
+        imgElement.alt = `Page ${pageNum}`;
+        imgElement.style.display = "block";
+        imgElement.style.margin = "10px auto";
+        imgElement.style.maxWidth = "100%";
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = imgURL;
+        downloadLink.download = `page-${pageNum}.png`;
+        downloadLink.innerHTML = `<button>تحميل الصفحة ${pageNum}</button>`;
+        downloadLink.style.display = "block";
+        downloadLink.style.textAlign = "center";
+
+        imagesDiv.appendChild(imgElement);
+        imagesDiv.appendChild(downloadLink);
+      }
+    });
+
+    const imgInput = document.getElementById("imgFiles");
+    const resultDiv = document.getElementById("pdfresult");
+    imgInput.addEventListener("change", async (e) => {
+      const files = [...e.target.files];
+      if (!files.length) return;
+      resultDiv.innerHTML = "<p id='loader'>يتم إنشاء ملف PDF…</p>";
+
+      const { jsPDF } = window.jspdf;
+      const pdfDoc = new jsPDF();
+
+      for (let i = 0; i < files.length; i++) {
+        const img = await createImageBitmap(files[i]);
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        canvas.getContext("2d").drawImage(img, 0, 0);
+        const imgData = canvas.toDataURL("image/jpeg");
+        if (i) pdfDoc.addPage();
+        pdfDoc.addImage(imgData, "JPEG", 10, 10, 190, 0);
+      }
+
+      const pdfURL = pdfDoc.output("bloburl");
+      resultDiv.innerHTML = `<a href="${pdfURL}" download="converted.pdf"><button>تحميل الملف PDF</button></a>`;
+    });
+
+
+    function copySiteLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    alert("✅ تم نسخ رابط الموقع إلى الحافظة!");
+  }).catch(() => {
+    alert("❌ لم يتم النسخ، حاول يدويًا.");
+  });
+}
+
+  </script>
+</body>
+</html>
